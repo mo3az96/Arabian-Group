@@ -1,0 +1,75 @@
+.top-bar {
+    margin: 21px 0 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
+
+    .lang-bar {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    .email {
+        font-size: 16px;
+        color: $bluecolor;
+
+        i {
+            color: $greencolor;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    .phone {
+        font-size: 16px;
+        color: $bluecolor;
+        margin: 0 20px 0 25px;
+
+        i {
+            color: $greencolor;
+            font-size: 14px;
+            margin-right: 5px;
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    .lang {
+        padding: 6px 30px;
+        font-size: 14px;
+        font-family: roman-bold;
+        background-color: $greencolor;
+        color: #fff;
+        border-radius: 2px;
+        @extend %btnhover;
+
+        &:before {
+            background-color: $bluecolor;
+            border-radius: 2px;
+        }
+
+        &:hover {
+            border-color: $bluecolor;
+
+            &:before {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+    }
+}

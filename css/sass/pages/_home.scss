@@ -1,0 +1,256 @@
+.about {
+    margin-top: 60px;
+
+    @media (max-width: 991px) {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .image {
+        position: relative;
+
+        @media (max-width: 991px) {
+            margin-top: 15px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 139, 209, 0.051);
+        }
+    }
+
+    .about-txt {
+        margin-top: 45px;
+    }
+
+    .about-header {
+        @extend %header;
+        margin-bottom: 25px;
+    }
+
+    .about-info {
+        color: #5f636a;
+        font-family: roman-light;
+        font-size: 16px;
+        margin-bottom: 25px;
+        padding-left: 10px;
+        text-align: justify;
+    }
+
+    .see-more {
+        position: relative;
+        color: #a6a6a6;
+        font-family: roman-light;
+        font-size: 16px;
+        @include transition(all 0.3s ease-in-out);
+        z-index: 2;
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #d8d8d8;
+            right: 0;
+            bottom: 4px;
+            @include transition(all 0.3s ease-in-out);
+        }
+
+        &:hover {
+            color: #5f636a;
+
+            &:after {
+                background-color: #5f636a;
+            }
+        }
+    }
+
+    .row-fix {
+        @media (max-width: 991px) {
+            display: flex;
+            flex-direction: column;
+
+            .col-down {
+                order: 2;
+            }
+
+            .col-up {
+                order: 1;
+            }
+        }
+    }
+}
+
+.about2 {
+    margin-top: 70px;
+    display: flex;
+
+    @media (max-width: 991px) {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+
+
+    .image {
+        position: relative;
+        width: 50%;
+
+        @media (max-width: 991px) {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(62, 172, 67, 0.051);
+        }
+    }
+
+    .info-txt {
+        width: 50%;
+        background-color: $greencolor;
+        padding-right: 40px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        @media (max-width: 991px) {
+            width: 100%;
+            padding: 25px 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 1200px) and (min-width: 992px) {
+            justify-content: space-around;
+        }
+    }
+
+    .about-icon {
+        margin-left: 20px;
+
+        @media (max-width: 991px) {
+            margin-left: 0;
+            margin-bottom: 15px;
+        }
+    }
+
+    .txt {
+        display: flex;
+        margin-bottom: 30px;
+
+        @media (max-width: 1200px) and (min-width: 992px) {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+
+    .about2-header {
+        color: #fff;
+        font-family: roman-bold;
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .about2-body {
+        font-size: 16px;
+        color: #b9f8c0;
+        padding-left: 120px;
+
+        @media (max-width: 1200px) {
+            padding: 0 50px;
+        }
+
+        @media (max-width: 767px) {
+            padding-left: 0;
+        }
+    }
+}
+
+.servises-section {
+    margin-top: 75px;
+
+    @media(max-width: 992px) {
+        margin-top: 45px;
+    }
+
+    .service-header {
+        @extend %header;
+        text-align: center;
+
+    }
+
+    .services {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media(max-width: 992px) {
+            justify-content: center;
+        }
+    }
+
+    .service {
+        position: relative;
+        margin-bottom: 30px;
+        overflow: hidden;
+
+        .overlay {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to top, rgba(12, 63, 92, 0.702), transparent);
+            z-index: 5;
+        }
+
+        img {
+            @include transition(all 0.3s ease-in-out);
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .service-link {
+        position: absolute;
+        font-size: 18px;
+        color: #fff;
+        font-family: roman-bold;
+        bottom: 33px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include transition(all 0.3s ease-in-out);
+        z-index: 6;
+
+        &:hover {
+            color: $greencolor;
+        }
+    }
+}

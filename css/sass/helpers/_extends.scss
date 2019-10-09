@@ -1,0 +1,42 @@
+%header {
+    font-size: 24px;
+    font-family: roman-black;
+    color: $bluecolor;
+    margin-bottom: 22px;
+}
+
+// @extend %header;
+
+%btnhover {
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    transition-property: color;
+    transition-duration: 0.3s;
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        @include transition(-webkit-transform 0.3s ease-out);
+        @include transition(transform 0.3s ease-out);
+    }
+
+    &:hover {
+        // border-color: #000;
+
+        &:before {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+}
+
+// @extend %btnhover;
